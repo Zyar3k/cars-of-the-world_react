@@ -1,4 +1,6 @@
-import { createContext } from "react";
+import { createContext, useReducer } from "react";
+import { v4 } from "uuid";
+import appReducer, { ADD_CAR, DELETE_CAR } from "./AppReducer";
 
 const initialState = {
   cars: [
@@ -26,8 +28,18 @@ const initialState = {
 export const GlobalContext = createContext(initialState);
 
 export const ContextProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(appReducer, initialState);
+
+  const addCar = (car) => {
+    dispatch({ type: ADD_CAR, payload: { ...car, id: v4() } });
+  };
+
+  const deleteCar = () => {
+    dispatch({ type: DELETE_CAR });
+  };
+
   return (
-    <GlobalContext.Provider value={initialState}>
+    <GlobalContext.Provider value={{ ...state, addCar, deleteCar }}>
       {children}
     </GlobalContext.Provider>
   );

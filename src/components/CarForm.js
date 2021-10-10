@@ -1,14 +1,15 @@
 import { useState, useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
+import { useHistory } from "react-router";
 
 const CarForm = () => {
-  const context = useContext(GlobalContext);
-  console.log(context);
+  const { addCar } = useContext(GlobalContext);
+  const history = useHistory();
 
   const [car, setCar] = useState({
-    brand: "Brand",
-    model: "Model",
-    year: "2021",
+    brand: "",
+    model: "",
+    year: "",
   });
 
   const handleOnChange = (e) => {
@@ -17,6 +18,8 @@ const CarForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    addCar(car);
+    history.push("/");
     console.log(car);
   };
   return (
@@ -33,14 +36,19 @@ const CarForm = () => {
         </div>
         <div>
           <input
+            type="text"
+            placeholder="Car model"
+            name="model"
+            onChange={handleOnChange}
+          />
+        </div>
+        <div>
+          <input
             type="number"
             placeholder="Car year"
             name="year"
             onChange={handleOnChange}
           />
-        </div>
-        <div>
-          <input type="number" placeholder="Car year" name="year" />
         </div>
         <button>Add car</button>
       </form>
