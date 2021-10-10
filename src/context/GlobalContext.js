@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-export const GlobalContext = createContext({
+const initialState = {
   cars: [
     {
       id: 18,
@@ -21,4 +21,14 @@ export const GlobalContext = createContext({
       year: "1910",
     },
   ],
-});
+};
+
+export const GlobalContext = createContext(initialState);
+
+export const ContextProvider = ({ children }) => {
+  return (
+    <GlobalContext.Provider value={initialState}>
+      {children}
+    </GlobalContext.Provider>
+  );
+};
