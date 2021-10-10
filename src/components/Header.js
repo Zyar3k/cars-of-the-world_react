@@ -13,7 +13,9 @@ const Header = () => {
           </Link>
         </div>
         <div className="headerItem">
-          <button>Add car</button>
+          <Link to="/add">
+            <button>Add car</button>
+          </Link>
         </div>
       </div>
     </header>
