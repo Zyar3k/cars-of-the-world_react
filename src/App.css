@@ -16,7 +16,7 @@
 header {
   background-color: black;
 
-  height: 60px;
+  height: 80px;
 
   display: flex;
   justify-content: center;
@@ -24,12 +24,18 @@ header {
 }
 
 .headerItem {
-  /* border: 1px solid red; */
   width: 33%;
 
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.headerItem svg {
+  margin-right: 8px;
+  width: 32px;
+  height: 32px;
+  color: rgb(202, 199, 199);
 }
 
 .headerItem input {
@@ -49,14 +55,25 @@ header {
   color: beige;
   margin: 0;
   padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.headerItem h1 svg {
+  height: 40px;
+  width: 40px;
+  color: red;
+}
+
 .headerItem a {
   text-decoration: none;
 }
 
 .headerItem button {
   height: 40px;
-  width: 100px;
+  width: 140px;
   font-weight: 500;
   font-size: 16px;
   border: none;
@@ -64,10 +81,20 @@ header {
   background-color: white;
   cursor: pointer;
   transition: all 0.4s ease;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .headerItem button:hover {
   background-color: rgb(202, 199, 199);
+}
+
+.headerItem button svg {
+  color: black;
 }
 
 /* 
@@ -128,13 +155,10 @@ form button:hover {
 
   margin: 0 auto;
   margin-top: 60px;
-
-  /* border: 1px solid red; */
 }
 
-.carItem {
-  /* border: 1px solid red; */
-
+.carItem,
+.listHeader {
   display: flex;
   align-items: center;
   width: 100%;
@@ -142,6 +166,34 @@ form button:hover {
 
   border-radius: 8px;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.4);
+}
+
+.listHeader {
+  background-color: rgb(71, 70, 70);
+}
+
+.itemHeader h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.itemHeader span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.itemHeader span:hover svg {
+  color: white;
+}
+
+.itemHeader svg {
+  color: rgba(255, 255, 255, 0.3);
+  width: 24px;
+  height: 24px;
 }
 
 .carBrand,
