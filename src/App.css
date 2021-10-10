@@ -2,37 +2,70 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* 
+----------- header ----------------
+*/
+header {
+  background-color: black;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+  height: 60px;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+header .container {
+  height: 100%;
+  width: 1260px;
+  margin: 0 auto;
+
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.headerItem {
+  /* border: 1px solid red; */
+  width: 33%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerItem input {
+  height: 40px;
+  padding-left: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+}
+.headerItem input:focus {
+  outline: none;
+  background-color: rgb(202, 199, 199);
+}
+
+.headerItem h1 {
+  color: beige;
+  margin: 0;
+  padding: 0;
+}
+.headerItem a {
+  text-decoration: none;
+}
+
+.headerItem button {
+  height: 40px;
+  width: 100px;
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.headerItem button:hover {
+  background-color: rgb(202, 199, 199);
 }
