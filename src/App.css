@@ -114,3 +114,69 @@ form button {
 form button:hover {
   background-color: rgb(202, 199, 199);
 }
+
+/* 
+--------------- car list -----------------
+*/
+
+.carList {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 auto;
+  margin-top: 60px;
+
+  /* border: 1px solid red; */
+}
+
+.carItem {
+  /* border: 1px solid red; */
+
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+
+  border-radius: 8px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.4);
+}
+
+.carBrand,
+.carModel {
+  width: 30%;
+}
+
+.carYear {
+  width: 15%;
+}
+
+.buttonsWrapper {
+  flex: auto;
+}
+.buttonsWrapper button {
+  border: none;
+  margin: 0 8px;
+  background-color: transparent;
+  cursor: pointer;
+}
+.buttonsWrapper svg {
+  height: 30px;
+  width: 30px;
+  transition: all 0.4s ease;
+}
+
+.btnEdit {
+  color: green;
+}
+.btnEdit:hover {
+  color: greenyellow;
+}
+.btnDelete {
+  color: rgba(255, 0, 0, 0.4);
+}
+.btnDelete:hover {
+  color: rgba(255, 0, 0, 1);
+}

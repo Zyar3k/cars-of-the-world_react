@@ -34,8 +34,8 @@ export const ContextProvider = ({ children }) => {
     dispatch({ type: ADD_CAR, payload: { ...car, id: v4() } });
   };
 
-  const deleteCar = () => {
-    dispatch({ type: DELETE_CAR });
+  const deleteCar = (id) => {
+    dispatch({ type: DELETE_CAR, payload: id });
   };
 
   return (

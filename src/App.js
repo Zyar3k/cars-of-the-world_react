@@ -15,6 +15,7 @@ function App() {
         <Switch>
           <Route path="/" component={CarList} exact />
           <Route path="/add" component={CarForm} />
+          <Route path="/edit/:id" component={CarForm} />
         </Switch>
       </div>
     </ContextProvider>

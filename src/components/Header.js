@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { IoMdAdd } from "react-icons/io";
 
 const Header = () => {
   return (
@@ -14,7 +15,10 @@ const Header = () => {
         </div>
         <div className="headerItem">
           <Link to="/add">
-            <button>Add car</button>
+            <button>
+              <IoMdAdd />
+              Add car
+            </button>
           </Link>
         </div>
       </div>

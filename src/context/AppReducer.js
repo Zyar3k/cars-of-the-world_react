@@ -10,7 +10,9 @@ export default function appReducer(state, { type, payload }) {
       return { cars: [...state.cars, payload] };
 
     case DELETE_CAR:
-      return { cars: [] };
+      return {
+        cars: state.cars.filter((car) => car.id !== payload),
+      };
 
     default:
       return state;
