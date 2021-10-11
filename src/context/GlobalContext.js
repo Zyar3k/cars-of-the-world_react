@@ -11,19 +11,19 @@ import appReducer, {
 const initialState = {
   cars: [
     {
-      id: 18,
+      id: "1f41f47b-0982-4061-a517-76d293f974ee",
       brand: "Fiat",
       model: "2/2B",
       year: "1910",
     },
     {
-      id: 22,
+      id: "aace6239-22ca-4ea2-a3b6-5a5ffc591e70",
       brand: "Audi",
       model: "Type C",
       year: "1912",
     },
     {
-      id: 23,
+      id: "1bb75e1c-49a9-4d6b-ba25-f9ef6fc32f97",
       brand: "Chevrolet",
       model: "Classic Six",
       year: "1910",
@@ -60,6 +60,7 @@ export const ContextProvider = ({ children }) => {
       value={{
         ...state,
         addCar,
+        cars: state.cars,
         deleteCar,
         updateCar,
         searchCar,

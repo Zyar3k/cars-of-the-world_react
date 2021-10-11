@@ -8,7 +8,7 @@ import { RiSearch2Line } from "react-icons/ri";
 import { GlobalContext } from "../context/GlobalContext";
 
 const Header = () => {
-  const { searchCar, clearFilter } = useContext(GlobalContext);
+  const { searchCar, clearFilter, filtered } = useContext(GlobalContext);
 
   const [searchValue, setSearchValue] = useState("");
 

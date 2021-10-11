@@ -7,7 +7,7 @@ export const CLEAR_FILTER = "CLEAR_FILTER";
 export default function appReducer(state, { type, payload }) {
   switch (type) {
     case ADD_CAR:
-      return { cars: [...state.cars, payload] };
+      return { cars: [...state.cars, payload], filtered: null };
 
     case DELETE_CAR:
       return {
@@ -41,6 +41,7 @@ export default function appReducer(state, { type, payload }) {
       });
       return {
         cars: updatedCars,
+        filtered: null,
       };
 
     default:

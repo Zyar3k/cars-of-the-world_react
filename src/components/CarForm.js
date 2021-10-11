@@ -4,6 +4,7 @@ import { useHistory, useParams } from "react-router";
 
 const CarForm = () => {
   const { addCar, cars, updateCar } = useContext(GlobalContext);
+
   const history = useHistory();
   const params = useParams();
 
@@ -32,10 +33,10 @@ const CarForm = () => {
 
     if (carFound) {
       setCar({
-        id: carFound.id,
         brand: carFound.brand,
         model: carFound.model,
         year: carFound.year,
+        id: carFound.id,
       });
     }
   }, [params.id, cars]);
