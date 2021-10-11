@@ -7,6 +7,7 @@ import { BsInputCursorText } from "react-icons/bs";
 
 const CarList = () => {
   const { cars, deleteCar } = useContext(GlobalContext);
+
   return (
     <div className="container">
       <div className="carList">

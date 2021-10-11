@@ -1,10 +1,11 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { GlobalContext } from "../context/GlobalContext";
-import { useHistory } from "react-router";
+import { useHistory, useParams } from "react-router";
 
 const CarForm = () => {
-  const { addCar } = useContext(GlobalContext);
+  const { addCar, cars, updateCar } = useContext(GlobalContext);
   const history = useHistory();
+  const params = useParams();
 
   const [car, setCar] = useState({
     brand: "",
@@ -18,20 +19,38 @@ const CarForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addCar(car);
+    if (!car.id) {
+      addCar(car);
+    } else {
+      updateCar(car);
+    }
     history.push("/");
-    console.log(car);
   };
+
+  useEffect(() => {
+    const carFound = cars.find((car) => car.id === params.id);
+
+    if (carFound) {
+      setCar({
+        id: carFound.id,
+        brand: carFound.brand,
+        model: carFound.model,
+        year: carFound.year,
+      });
+    }
+  }, [params.id, cars]);
+
   return (
     <div className="container">
       <form onSubmit={handleSubmit}>
-        <h2>Add car</h2>
+        <h2>{car.id ? "Edit car" : "Add car"}</h2>
         <div>
           <input
             type="text"
             placeholder="Car brand"
             name="brand"
             onChange={handleOnChange}
+            value={car.brand}
           />
         </div>
         <div>
@@ -40,6 +59,7 @@ const CarForm = () => {
             placeholder="Car model"
             name="model"
             onChange={handleOnChange}
+            value={car.model}
           />
         </div>
         <div>
@@ -48,9 +68,10 @@ const CarForm = () => {
             placeholder="Car year"
             name="year"
             onChange={handleOnChange}
+            value={car.year}
           />
         </div>
-        <button>Add car</button>
+        <button>{car.id ? "Edit" : "Add car"}</button>
       </form>
     </div>
   );
