@@ -1,6 +1,8 @@
 export const ADD_CAR = "ADD_CAR";
 export const DELETE_CAR = "DELETE_CAR";
 export const UPDATE_CAR = "UPDATE_CAR";
+export const SEARCH_CAR = "SEARCH_CAR";
+export const CLEAR_FILTER = "CLEAR_FILTER";
 
 export default function appReducer(state, { type, payload }) {
   switch (type) {
@@ -10,6 +12,20 @@ export default function appReducer(state, { type, payload }) {
     case DELETE_CAR:
       return {
         cars: state.cars.filter((car) => car.id !== payload),
+      };
+
+    case SEARCH_CAR:
+      return {
+        ...state,
+        filtered: state.cars.filter((car) =>
+          car.brand.toLowerCase().includes(payload.toLowerCase())
+        ),
+      };
+
+    case CLEAR_FILTER:
+      return {
+        ...state,
+        filtered: null,
       };
 
     case UPDATE_CAR:

@@ -1,6 +1,12 @@
 import { createContext, useReducer } from "react";
 import { v4 } from "uuid";
-import appReducer, { ADD_CAR, DELETE_CAR, UPDATE_CAR } from "./AppReducer";
+import appReducer, {
+  ADD_CAR,
+  DELETE_CAR,
+  UPDATE_CAR,
+  SEARCH_CAR,
+  CLEAR_FILTER,
+} from "./AppReducer";
 
 const initialState = {
   cars: [
@@ -23,6 +29,7 @@ const initialState = {
       year: "1910",
     },
   ],
+  filtered: null,
 };
 
 export const GlobalContext = createContext(initialState);
@@ -38,10 +45,28 @@ export const ContextProvider = ({ children }) => {
     dispatch({ type: DELETE_CAR, payload: id });
   };
 
+  const searchCar = (id) => {
+    dispatch({ type: SEARCH_CAR, payload: id });
+  };
+
+  const clearFilter = () => {
+    dispatch({ type: CLEAR_FILTER });
+  };
+
   const updateCar = (car) => dispatch({ type: UPDATE_CAR, payload: car });
 
   return (
-    <GlobalContext.Provider value={{ ...state, addCar, deleteCar, updateCar }}>
+    <GlobalContext.Provider
+      value={{
+        ...state,
+        addCar,
+        deleteCar,
+        updateCar,
+        searchCar,
+        filtered: state.filtered,
+        clearFilter,
+      }}
+    >
       {children}
     </GlobalContext.Provider>
   );

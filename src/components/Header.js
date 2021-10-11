@@ -1,15 +1,39 @@
+import { useContext, useState, useEffect } from "react";
+
 import { Link } from "react-router-dom";
 import { IoMdAdd } from "react-icons/io";
 import { IoCarSport } from "react-icons/io5";
 import { RiSearch2Line } from "react-icons/ri";
 
+import { GlobalContext } from "../context/GlobalContext";
+
 const Header = () => {
+  const { searchCar, clearFilter } = useContext(GlobalContext);
+
+  const [searchValue, setSearchValue] = useState("");
+
+  const handleChange = (e) => {
+    setSearchValue(e.target.value);
+  };
+
+  useEffect(() => {
+    if (searchValue !== "") {
+      searchCar(searchValue);
+    } else {
+      clearFilter();
+    }
+  }, [searchValue]);
+
   return (
     <header>
       <div className="container">
         <div className="headerItem">
           <RiSearch2Line />
-          <input type="text" placeholder="Search by brand" />
+          <input
+            type="text"
+            placeholder="Search by brand"
+            onChange={handleChange}
+          />
         </div>
         <div className="headerItem">
           <Link to="/">
