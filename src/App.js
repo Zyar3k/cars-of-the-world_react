@@ -5,18 +5,18 @@ import Header from "./components/Header";
 
 import { ContextProvider } from "./context/GlobalContext";
 
-import "./App.css";
+import "./App.scss";
 
 function App() {
   return (
     <ContextProvider>
       <div className="App">
         <Header />
-        <Switch>
+        {/* <Switch>
           <Route path="/" component={CarList} exact />
           <Route path="/add" component={CarForm} />
           <Route path="/edit/:id" component={CarForm} />
-        </Switch>
+        </Switch> */}
       </div>
     </ContextProvider>
   );

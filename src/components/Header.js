@@ -7,9 +7,10 @@ import { RiSearch2Line } from "react-icons/ri";
 
 import { GlobalContext } from "../context/GlobalContext";
 
+import styles from "./Header.module.scss";
+
 const Header = () => {
   const { searchCar, clearFilter } = useContext(GlobalContext);
-
   const [searchValue, setSearchValue] = useState("");
 
   const handleChange = (e) => {
@@ -25,9 +26,9 @@ const Header = () => {
   }, [searchValue]);
 
   return (
-    <header>
+    <header className={styles.header}>
       <div className="container">
-        <div className="headerItem">
+        <div className={styles.headerItem}>
           <RiSearch2Line />
           <input
             type="text"
@@ -35,7 +36,7 @@ const Header = () => {
             onChange={handleChange}
           />
         </div>
-        <div className="headerItem">
+        <div className={styles.headerItem}>
           <Link to="/">
             <h1>
               <IoCarSport />
@@ -43,7 +44,7 @@ const Header = () => {
             </h1>
           </Link>
         </div>
-        <div className="headerItem">
+        <div className={styles.headerItem}>
           <Link to="/add">
             <button>
               <IoMdAdd />

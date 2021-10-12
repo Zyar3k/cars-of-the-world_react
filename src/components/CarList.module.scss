@@ -1,0 +1,89 @@
+.carList {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 60px;
+
+  .carItem,
+  .listHeader {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  .listHeader {
+    background-color: rgb(71, 70, 70);
+    position: sticky;
+    top: 80px;
+  }
+
+  .itemHeader {
+    h3 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 10px;
+      cursor: pointer;
+
+      &:hover svg {
+        color: white;
+      }
+    }
+
+    svg {
+      color: rgba(255, 255, 255, 0.3);
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .carBrand,
+  .carModel {
+    width: 30%;
+  }
+
+  .carYear {
+    width: 15%;
+  }
+
+  .buttonsWrapper {
+    flex: auto;
+    button {
+      border: none;
+      margin: 0 8px;
+      background-color: transparent;
+      cursor: pointer;
+    }
+    svg {
+      height: 30px;
+      width: 30px;
+      transition: all 0.4s ease;
+    }
+  }
+
+  .btnEdit {
+    color: green;
+    &:hover {
+      color: greenyellow;
+    }
+  }
+
+  .btnDelete {
+    color: rgba(255, 0, 0, 0.4);
+    &:hover {
+      color: rgba(255, 0, 0, 1);
+    }
+  }
+}

@@ -2,6 +2,8 @@ import { useState, useContext, useEffect } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 import { useHistory, useParams } from "react-router";
 
+import styles from "./CarForm.module.scss";
+
 const CarForm = () => {
   const { addCar, cars, updateCar } = useContext(GlobalContext);
 
@@ -43,7 +45,7 @@ const CarForm = () => {
 
   return (
     <div className="container">
-      <form onSubmit={handleSubmit}>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <h2>{car.id ? "Edit car" : "Add car"}</h2>
         <div>
           <input

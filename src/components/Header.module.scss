@@ -1,0 +1,85 @@
+.header {
+  background-color: black;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: sticky;
+  top: 0;
+}
+
+.headerItem {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    margin-right: 8px;
+    width: 32px;
+    height: 32px;
+    color: rgb(202, 199, 199);
+  }
+
+  input {
+    height: 40px;
+    padding-left: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+
+    &:focus {
+      outline: none;
+      background-color: rgb(202, 199, 199);
+    }
+  }
+
+  h1 {
+    color: beige;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      height: 40px;
+      width: 40px;
+      color: red;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  button {
+    height: 40px;
+    width: 140px;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.4s ease;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+
+    svg {
+      color: black;
+    }
+
+    &:hover {
+      background-color: rgb(202, 199, 199);
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+}
