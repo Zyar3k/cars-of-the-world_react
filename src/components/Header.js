@@ -27,7 +27,7 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <div className="container">
+      <div className={`container ${styles.headerContainer}`}>
         <div className={styles.headerItem}>
           <RiSearch2Line />
           <input
@@ -48,7 +48,7 @@ const Header = () => {
           <Link to="/add">
             <button>
               <IoMdAdd />
-              Add car
+              Add
             </button>
           </Link>
         </div>
