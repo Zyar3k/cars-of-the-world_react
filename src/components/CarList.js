@@ -6,8 +6,10 @@ import { BiEdit } from "react-icons/bi";
 import { BsInputCursorText } from "react-icons/bs";
 
 const CarList = () => {
-  const { cars, deleteCar, filtered } = useContext(GlobalContext);
+  const { cars, deleteCar, filtered, sortBy, desc } = useContext(GlobalContext);
   const [displayData, setDisplayData] = useState(cars);
+  // const [desc, setDesc] = useState(true);
+  // console.log(desc);
 
   useEffect(() => {
     if (filtered === null) {
@@ -15,6 +17,11 @@ const CarList = () => {
     } else {
       setDisplayData(filtered);
     }
+    // if (desc) {
+    //   setDesc(!desc);
+    // } else {
+    //   setDesc(desc);
+    // }
   }, [cars, filtered]);
 
   return (
@@ -24,7 +31,7 @@ const CarList = () => {
           <div className="carBrand itemHeader">
             <h3>
               Brand
-              <span>
+              <span name="brand" onClick={() => sortBy("brand", desc)}>
                 <BsInputCursorText />
               </span>
             </h3>
@@ -32,7 +39,7 @@ const CarList = () => {
           <div className="carModel itemHeader">
             <h3>
               Model
-              <span>
+              <span name="model" onClick={() => sortBy("model", desc)}>
                 <BsInputCursorText />
               </span>
             </h3>
@@ -40,7 +47,7 @@ const CarList = () => {
           <div className="carYear itemHeader">
             <h3>
               Year
-              <span>
+              <span name="year" onClick={() => sortBy("year", desc)}>
                 <BsInputCursorText />
               </span>
             </h3>

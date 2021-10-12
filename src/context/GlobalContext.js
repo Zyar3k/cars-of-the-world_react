@@ -6,6 +6,7 @@ import appReducer, {
   UPDATE_CAR,
   SEARCH_CAR,
   CLEAR_FILTER,
+  SORT_BY,
 } from "./AppReducer";
 
 const initialState = {
@@ -30,6 +31,7 @@ const initialState = {
     },
   ],
   filtered: null,
+  desc: false,
 };
 
 export const GlobalContext = createContext(initialState);
@@ -45,6 +47,8 @@ export const ContextProvider = ({ children }) => {
     dispatch({ type: DELETE_CAR, payload: id });
   };
 
+  const updateCar = (car) => dispatch({ type: UPDATE_CAR, payload: car });
+
   const searchCar = (id) => {
     dispatch({ type: SEARCH_CAR, payload: id });
   };
@@ -53,7 +57,9 @@ export const ContextProvider = ({ children }) => {
     dispatch({ type: CLEAR_FILTER });
   };
 
-  const updateCar = (car) => dispatch({ type: UPDATE_CAR, payload: car });
+  const sortBy = (name, desc, value) => {
+    dispatch({ type: SORT_BY, payload: { name, desc, value } });
+  };
 
   return (
     <GlobalContext.Provider
@@ -66,6 +72,8 @@ export const ContextProvider = ({ children }) => {
         searchCar,
         filtered: state.filtered,
         clearFilter,
+        sortBy,
+        desc: state.desc,
       }}
     >
       {children}
