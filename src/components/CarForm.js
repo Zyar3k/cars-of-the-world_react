@@ -6,6 +6,7 @@ import styles from "./CarForm.module.scss";
 
 const CarForm = () => {
   const { addCar, cars, updateCar } = useContext(GlobalContext);
+  const [error, setError] = useState(false);
 
   const history = useHistory();
   const params = useParams();
@@ -23,11 +24,19 @@ const CarForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!car.id) {
-      addCar(car);
+      if (car.brand === "" || car.model === "" || car.year === "") {
+        console.log("brand");
+        setError(true);
+      } else {
+        addCar(car);
+        history.push("/");
+        setError(false);
+      }
     } else {
       updateCar(car);
+      history.push("/");
+      setError(false);
     }
-    history.push("/");
   };
 
   useEffect(() => {
@@ -74,6 +83,7 @@ const CarForm = () => {
             value={car.year}
           />
         </div>
+        {error ? <p className={styles.error}>Please fill all fields!</p> : null}
         <button>{car.id ? "Edit" : "Add car"}</button>
       </form>
     </div>
