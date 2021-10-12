@@ -3,7 +3,6 @@ import { GlobalContext } from "../context/GlobalContext";
 import { Link } from "react-router-dom";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { BiEdit } from "react-icons/bi";
-import { BsInputCursorText } from "react-icons/bs";
 import { GoTriangleDown } from "react-icons/go";
 
 import styles from "./CarList.module.scss";
