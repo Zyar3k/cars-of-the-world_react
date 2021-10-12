@@ -87,3 +87,80 @@
     }
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .carList {
+    width: 95%;
+
+    .carItem,
+    .listHeader {
+      font-size: 14px;
+    }
+
+    .itemHeader {
+      span {
+        margin-left: 6px;
+      }
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    .carYear {
+      width: 14%;
+    }
+
+    .buttonsWrapper {
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 499px) {
+  .carList {
+    width: 95%;
+    margin-top: 20px;
+
+    .carItem,
+    .listHeader {
+      font-size: 12px;
+    }
+
+    .itemHeader {
+      span {
+        margin-left: 6px;
+      }
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    .carBrand,
+    .carModel {
+      width: 27%;
+    }
+
+    .carYear {
+      width: 22%;
+    }
+
+    .buttonsWrapper {
+      width: 20%;
+
+      button {
+        margin: 0;
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}

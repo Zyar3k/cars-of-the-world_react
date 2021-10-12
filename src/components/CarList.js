@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { BiEdit } from "react-icons/bi";
 import { BsInputCursorText } from "react-icons/bs";
+import { GoTriangleDown } from "react-icons/go";
 
 import styles from "./CarList.module.scss";
 
@@ -27,7 +28,7 @@ const CarList = () => {
             <h3>
               Brand
               <span name="brand" onClick={() => sortBy("brand", desc)}>
-                <BsInputCursorText />
+                <GoTriangleDown />
               </span>
             </h3>
           </div>
@@ -35,7 +36,7 @@ const CarList = () => {
             <h3>
               Model
               <span name="model" onClick={() => sortBy("model", desc)}>
-                <BsInputCursorText />
+                <GoTriangleDown />
               </span>
             </h3>
           </div>
@@ -43,7 +44,7 @@ const CarList = () => {
             <h3>
               Year
               <span name="year" onClick={() => sortBy("year", desc)}>
-                <BsInputCursorText />
+                <GoTriangleDown />
               </span>
             </h3>
           </div>

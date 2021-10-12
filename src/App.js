@@ -12,11 +12,11 @@ function App() {
     <ContextProvider>
       <div className="App">
         <Header />
-        {/* <Switch>
+        <Switch>
           <Route path="/" component={CarList} exact />
           <Route path="/add" component={CarForm} />
           <Route path="/edit/:id" component={CarForm} />
-        </Switch> */}
+        </Switch>
       </div>
     </ContextProvider>
   );
